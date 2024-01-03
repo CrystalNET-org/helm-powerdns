@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "pdns.fullname" . }}
+  labels:
+    app: {{ template "pdns.name" . }}
+    chart: {{ template "pdns.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "pdns.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "pdns.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/entrypoint.sh"]
+          args: ["--api={{ .Values.pdns.api.enabled }}", "--api-key=$(POWERDNS_API_KEY)", "--webserver=yes", "--webserver-port=8081", "--webserver-address=0.0.0.0", "--webserver-allow-from={{ .Values.pdns.webserver.allowFrom }}", "--slave=yes", "--dnsupdate={{ .Values.pdns.dnsupdate.enabled }}"]
+          env:
+              - name: POWERDNS_API_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: powerdns-secret
+                    key: POWERDNS_API_KEY
+              - name: MYSQL_PASS
+                valueFrom:
+                  secretKeyRef:
+                    name: powerdns-secret
+                    key: POWERDNS_MYSQL_PASS
+              - name: MYSQL_USER
+                valueFrom:
+                  secretKeyRef:
+                    name: powerdns-secret
+                    key: POWERDNS_MYSQL_USER
+              - name: MYSQL_HOST
+                value: {{ .Values.env.MYSQL_HOST }}
+              - name: MYSQL_DB
+                value: {{ .Values.env.MYSQL_DB }}
+              - name: MYSQL_DNSSEC
+                value: "{{ .Values.env.MYSQL_DNSSEC }}"
+              - name: MYSQL_AUTOCONF
+                value: "{{ .Values.env.MYSQL_AUTOCONF }}"
+              - name: POWERDNS_LOGLEVEL
+                value: "{{ .Values.env.POWERDNS_LOGLEVEL }}"  
+              - name: POWERDNS_ALLOW_AXFR_IPS
+                value: "{{ .Values.env.POWERDNS_ALLOW_AXFR_IPS }}"      
+          ports:
+            - name: dns-udp
+              containerPort: 53
+              protocol: UDP
+            - name: dns-tcp
+              containerPort: 53
+              protocol: TCP
+            - name: api
+              containerPort: 8081
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: api
+          readinessProbe:
+            httpGet:
+              path: /
+              port: api
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
