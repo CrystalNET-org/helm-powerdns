@@ -4,10 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@psych0d0g, @Psych0D0g
+@Lukas Wingerberg, @psych0d0g, @Psych0D0g
 
 ### Misc
 
+- Update _helpers.tpl ([d3a2584](https://github.com/CrystalNET-org/helm-powerdns/commit/d3a2584e5924c6bd3047e676a8a65462a32e5ae1))
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.122.0 [[#5](https://github.com/CrystalNET-org/helm-powerdns/pull/5)]
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.119.0 [[#4](https://github.com/CrystalNET-org/helm-powerdns/pull/4)]
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.117.1 [[#1](https://github.com/CrystalNET-org/helm-powerdns/pull/1)]
