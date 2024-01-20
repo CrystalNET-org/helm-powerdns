@@ -4,10 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Lukas Wingerberg, @psych0d0g, @Psych0D0g
+@psych0d0g, @Lukas Wingerberg, @Psych0D0g
 
 ### Misc
 
+- Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.140.10 [[#6](https://github.com/CrystalNET-org/helm-powerdns/pull/6)]
 - Update .gitattributes ([9953366](https://github.com/CrystalNET-org/helm-powerdns/commit/9953366aecdd26d736691582f641805dd09a2542))
 - Update .gitattributes ([ca161b4](https://github.com/CrystalNET-org/helm-powerdns/commit/ca161b41b6526ef02d90defbecdb5e976800b48f))
 - Create .gitattributes ([f80ba79](https://github.com/CrystalNET-org/helm-powerdns/commit/f80ba795a589412374984fbb08637d8c7b136345))
