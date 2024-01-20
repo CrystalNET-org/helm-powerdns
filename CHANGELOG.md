@@ -8,6 +8,7 @@
 
 ### Misc
 
+- Update .gitattributes ([9953366](https://github.com/CrystalNET-org/helm-powerdns/commit/9953366aecdd26d736691582f641805dd09a2542))
 - Update .gitattributes ([ca161b4](https://github.com/CrystalNET-org/helm-powerdns/commit/ca161b41b6526ef02d90defbecdb5e976800b48f))
 - Create .gitattributes ([f80ba79](https://github.com/CrystalNET-org/helm-powerdns/commit/f80ba795a589412374984fbb08637d8c7b136345))
 - Update _helpers.tpl ([d3a2584](https://github.com/CrystalNET-org/helm-powerdns/commit/d3a2584e5924c6bd3047e676a8a65462a32e5ae1))
