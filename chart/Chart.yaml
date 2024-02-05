@@ -2,7 +2,7 @@ apiVersion: v2
 name: powerdns
 description: A Helm chart to deploy PowerDNS to Kubernetes
 type: application
-version: 0.2.5
+version: 0.0.1
 # renovate: datasource=github-releases depName=CrystalNET-org/powerdns extractVersion=^v(?<version>.*)$
 appVersion: 4.7.3-3
 home: https://www.powerdns.com/
