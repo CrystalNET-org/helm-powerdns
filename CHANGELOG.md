@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.0.1](https://github.com/CrystalNET-org/helm-powerdns/releases/tag/0.0.1) - 2024-01-20
+## [0.0.1](https://github.com/CrystalNET-org/helm-powerdns/releases/tag/0.0.1) - 2024-02-05
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,9 @@
 
 ### Misc
 
+- Update harbor.crystalnet.org/dockerhub-proxy/woodpeckerci/plugin-git Docker tag to v2.5.0 [[#9](https://github.com/CrystalNET-org/helm-powerdns/pull/9)]
+- Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.173.0 [[#8](https://github.com/CrystalNET-org/helm-powerdns/pull/8)]
+- Update harbor.crystalnet.org/dockerhub-proxy/alpine/helm Docker tag to v3.14.0 [[#7](https://github.com/CrystalNET-org/helm-powerdns/pull/7)]
 - Update harbor.crystalnet.org/dockerhub-proxy/renovate/renovate Docker tag to v37.140.10 [[#6](https://github.com/CrystalNET-org/helm-powerdns/pull/6)]
 - Update .gitattributes ([9953366](https://github.com/CrystalNET-org/helm-powerdns/commit/9953366aecdd26d736691582f641805dd09a2542))
 - Update .gitattributes ([ca161b4](https://github.com/CrystalNET-org/helm-powerdns/commit/ca161b41b6526ef02d90defbecdb5e976800b48f))
